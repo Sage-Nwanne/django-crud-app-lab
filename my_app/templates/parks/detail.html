@@ -9,9 +9,9 @@
     <img src="{% static 'images/man_in_water.jpg' %}" alt="A man standing in water" />      
   </div>
   <div class="park-details">
-    <h1>{{ park.name }}</h1>
-    <p>{{ park.location }}</p>
-    <p>{{ park.description }}</p>
+    <h1 class="park-name" style="font-size: 30px;">{{ park.name }}</h1>
+    <p class="park-location" style="font-size: 20px;">Located in {{ park.location }}</p>
+    <p class="park-description" style="font-size: 15px;">{{ park.description }}</p>
 
     <div class="park-actions">
       <a href="{% url 'park-update' park.id %}" class="btn">Edit</a>

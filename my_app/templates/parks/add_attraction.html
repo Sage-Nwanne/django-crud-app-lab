@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Add Attraction to {{ park.name }}</h1>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+        <label>Name:</label>
+        <input type="text" name="name" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Description:</label>
+        <textarea name="description" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label>Type:</label>
+        <select name="type" class="form-control">
+            <option value="waterfall">Waterfall</option>
+            <option value="viewpoint">Viewpoint</option>
+            <option value="historical">Historical Site</option>
+            <option value="visitor_center">Visitor Center</option>
+            <option value="cave">Cave</option>
+            <option value="lake">Lake</option>
+            <option value="trailhead">Trailhead</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+    <button type="submit" class="btn">Add Attraction</button>
+</form>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %} {% load static %} {% block head %}
+<link
+  rel="stylesheet"
+  href="{% static 'css/parks/park-index.css' %}"
+/>
+{% endblock %} 
+{% block content %}
+
+<section class="page-header">
+  <h1>National Park List</h1>
+  <img
+    src="{% static 'images/waterfall.jpg' %}"
+    alt="Dexter"
+  />
+  <img
+    src="{% static 'images/rocky_water.jpg' %}"
+    alt="Rocky water"
+  />
+  <img
+    src="{% static 'images/man_in_water.jpg' %}"
+    alt="A man standing in water"
+  />
+</section>
+
+<section class="card-container">
+  {% for park in parks %}
+    <div class="card">
+      <a href="/parks/{{ park.id }}">
+        <div class="card-content">
+          <div class="card-img-container">
+            <img
+              src="{% static 'images/Dexter.jpg' %}"
+              alt="Dexter"
+            />
+          </div>
+          <h2 class="card-title">{{ park.name }}, located in the beautiful {{ park.location }}.</h2>
+          <h4>Read more about this park.</h4>
+          <p><i>{{ park.description }}</i></p>
+        </div>
+      </a>
+    </div>
+  {% endfor %}
+</section>
+
+{% endblock %}
